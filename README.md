@@ -5,6 +5,11 @@
 yarn install
 ```
 
+### Start mockup back-end
+```
+node src/server.js
+```
+
 ### Compiles and hot-reloads for development
 ```
 yarn serve
