@@ -4,8 +4,8 @@ const cors = require('cors')
 const app = express()
 app.use(cors())
 
-const delay = () => new Promise(res => setTimeout(res, 8080))
-
+const delay = () => new Promise(res => setTimeout(res, 3080))
+ 
 app.get('/recipes', async (req, res) => {
   await delay()
   res.json([
@@ -182,4 +182,4 @@ app.get('/recipes', async (req, res) => {
   ])
 })
 
-app.listen(8080, () => console.log('Listening on 8080'))
+app.listen(3080, () => console.log('Listening on 3080'))
