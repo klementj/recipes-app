@@ -1,26 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <BaseCard title="test" time="30" isVegan="true" isFavorite="true"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BaseCard from './components//UI/BaseCard.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    BaseCard
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
