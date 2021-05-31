@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express()
 app.use(cors())
 
-const delay = () => new Promise(res => setTimeout(res, 2000))
+const delay = () => new Promise(res => setTimeout(res, 8080))
 
 app.get('/recipes', async (req, res) => {
   await delay()
