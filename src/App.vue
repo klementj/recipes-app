@@ -17,7 +17,7 @@
       </section>
     </main>
   </div>
-  <Recipe-Navigation></Recipe-Navigation>
+  <RecipeNavigation></RecipeNavigation>
 </template>
 
 <script>
