@@ -14,9 +14,7 @@
       <section class="px-10 mt-10">
           <h3 class="font-semibold text-gray-500">New recipes</h3>
           <Slideshow>
-            <test/>
-            <test/>
-            <test/>
+            <BaseCard title="test title" time="30" image="./assets/images/featured-baguette-figs.jpg"/>
 
           </Slideshow>
       </section>
@@ -26,18 +24,18 @@
       </section>
     </main>
   </div>
-  <RecipeNavigation></RecipeNavigation>
+  <!-- <RecipeNavigation></RecipeNavigation> -->
 </template>
 
 <script>
   import Slideshow from './components/slideshow.vue';
-  import test from './components/HelloWorld';
-  import RecipeNavigation from './components/RecipeNavigation.vue';
+  import BaseCard from './components/UI/BaseCard.vue';
+  // import RecipeNavigation from './components/RecipeNavigation.vue';
   export default {
     components: {
       Slideshow,
-      test,
-      RecipeNavigation
+      BaseCard,
+     // RecipeNavigation
     }
   }
 
