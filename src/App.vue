@@ -3,7 +3,7 @@
 
 <template>
 
-  <div class="dark:bg-gray-700">
+  <div class="dark:bg-gray-700 mt-10">
       
     <header class="flex justify-between px-10">
       <h2 class="font-semibold text-3xl">Recipes</h2>
@@ -11,11 +11,10 @@
       
     </header>
     <main>
-      <section class="px-10 mt-10">
+      <section class="px-10 pr-0 mt-10">
           <h3 class="font-semibold text-gray-500">New recipes</h3>
-          <Slideshow>
-            <BaseCard title="test title" time="30" image="./assets/images/featured-baguette-figs.jpg"/>
-
+          <Slideshow >
+            <BaseCard v-for="recipe in recipes" :key="recipe.id" class="card" :title="recipe.name" :time="recipe.time" image="https://i.imgur.com/L2m8Gmk.jpg"/>
           </Slideshow>
       </section>
       <section class="px-10 mt-10">
@@ -32,21 +31,31 @@
   import BaseCard from './components/UI/BaseCard.vue';
   // import RecipeNavigation from './components/RecipeNavigation.vue';
   export default {
+    
+    mounted(){
+      fetch('http://localhost:3080/recipes')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.recipes = data;
+        console.log(this.recipes);
+      });
+    },
     components: {
       Slideshow,
       BaseCard,
      // RecipeNavigation
+    },
+    data(){
+      return {
+        recipes: {},
+      };
     }
   }
 
   
-  fetch('http://localhost:3080/recipes')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  });
+  
 
 
 
@@ -64,4 +73,9 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+.card {
+    display: inline-block !important;
+    width: 300px;
+    scroll-snap-align: start;
+  }
 </style>
