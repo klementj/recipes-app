@@ -26,15 +26,18 @@
       </section>
     </main>
   </div>
+  <RecipeNavigation></RecipeNavigation>
 </template>
 
 <script>
   import Slideshow from './components/slideshow.vue';
   import test from './components/HelloWorld';
+  import RecipeNavigation from './components/RecipeNavigation.vue';
   export default {
     components: {
       Slideshow,
-      test
+      test,
+      RecipeNavigation
     }
   }
 
@@ -46,6 +49,8 @@
   .then((data) => {
     console.log(data);
   });
+
+
 
 </script>
 
