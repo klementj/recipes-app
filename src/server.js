@@ -17,7 +17,7 @@ app.get('/recipes', async (req, res) => {
       date: '2020-04-23T18:25:43.511Z',
       isFavorite: 'false',
       category: ['pork', 'pasta'],
-      featuredImage: '/images/feature-pasta-carbonara.jpg',
+      featuredImage: '/images/featured-pasta-carbonara.jpg',
       ingredients: [
         {
           amount: '4',
