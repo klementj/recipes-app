@@ -7,7 +7,7 @@
     </div>
     <div  :class="height" class="image-container">
 
-        <img class="w-full" :src="'http://localhost:3080/' + image">
+        <img class="w-full slideimg" :src="'http://localhost:3080/' + image">
     </div>
     <div class="vegan-banner" v-if="isVegan">
         <svg class="inline-block h-8 w-8 mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.024 15.606"><g transform="matrix(0.574, 0.819, -0.819, 0.574, 2612.476, -2550.069)"><path class="line-a" d="M1455.333,844.409s-1.175.108-2.209.108a2.525,2.525,0,0,1-2.755-2.464,6.766,6.766,0,0,1,1.3-4c1.343-2.068,3.4-4.743,3.66-4.743s1.989,2.468,3.3,4.743a6.971,6.971,0,0,1,1.236,4,2.26,2.26,0,0,1-2.466,2.356Z" transform="translate(-853.693 2761.673)"/><line class="line-a" y2="8.384" transform="translate(601.427 3600.7)"/><line class="line-a" x1="2.368" y2="2.086" transform="translate(601.427 3601.743)"/><line class="line-a" x2="2.368" y2="2.086" transform="translate(599.059 3601.743)"/></g></svg>
@@ -75,7 +75,7 @@
     }
     .line-a{fill:none;stroke:#fff;stroke-linecap:round;}
 
-    .a,.b,.d{fill:none;}.a,.b{stroke:#3d3d3d;}.a{stroke-width:1.2px;}.b{stroke-linecap:round;}.c{stroke:none;}
+    .a,.b,.d{fill:none;}.a,.b{stroke:#ffffff;}.a{stroke-width:1.2px;}.b{stroke-linecap:round;}.c{stroke:none;}
     /*Svg styling end*/
 
     .base-card{
@@ -99,7 +99,6 @@
     .image-container img{
         object-fit: cover;
         object-position: center;
-        height: 100%;
         width: 100%;
     }
 

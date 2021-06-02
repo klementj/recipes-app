@@ -14,7 +14,7 @@
       <section class="px-10 pr-0 mt-10">
           <h3 class="font-semibold text-gray-500 dark:text-gray-300">New recipes</h3>
           <Slideshow >
-            <BaseCard v-for="recipe in newRecipes" :key="recipe.id" class="card" :title="recipe.name" :time="recipe.time" image="https://i.imgur.com/L2m8Gmk.jpg"/>
+            <BaseCard v-for="recipe in newRecipes" :key="recipe.id" class="card" :title="recipe.name" :time="recipe.time" :image="recipe.featuredImage"/>
           </Slideshow>
       </section>
       <section class="px-10 mt-10">
