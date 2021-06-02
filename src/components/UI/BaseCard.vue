@@ -6,6 +6,7 @@
         </svg>
     </div>
     <div  :class="height" class="image-container">
+
         <img class="w-full" :src="'http://localhost:3080/' + image">
     </div>
     <div class="vegan-banner" v-if="isVegan">
@@ -13,12 +14,12 @@
         <h5>Vegan</h5>
     </div>
     <div :class="textClass"  class="card-text-container">
-        <h3 class="text-2xl font-bold py-2">{{title}}</h3>
+        <h3 class="text-2xl cardtitle font-bold py-2 truncate dark:text-gray-300" >{{title}}</h3>
         <div class="flex">
-            <svg class="mr-1 h-5 w-5 text-xl" xmlns="http://www.w3.org/2000/svg" width="13" height="14.531" viewBox="0 0 13 14.531">
+            <svg class="mr-1 h-5 w-5 text-xl " xmlns="http://www.w3.org/2000/svg" width="13" height="14.531" viewBox="0 0 13 14.531">
                 <g transform="translate(-576 -3580.469)"><g transform="translate(-886.693 2747.694)"><g class="a" transform="translate(1462.693 834.306)"><circle class="c" cx="6.5" cy="6.5" r="6.5"/><circle class="d" cx="6.5" cy="6.5" r="5.9"/></g><line class="b" y2="0.45" transform="translate(1469.273 833.806)"/><line class="b" x1="4" transform="translate(1467.193 833.275)"/><line class="b" x1="2" transform="translate(1470.693 840.806)"/><g class="a" transform="translate(1467.693 839.306)"><circle class="c" cx="1.5" cy="1.5" r="1.5"/><circle class="d" cx="1.5" cy="1.5" r="0.9"/></g></g></g>
             </svg> 
-            <p>{{time}} min</p>
+            <p class="dark:text-gray-300">{{time}}</p>
         </div>
     </div>
 </div>
@@ -48,7 +49,6 @@
             }, 
             height: {
                 type: String,
-                default: 'h-60'
             }
         },
         computed: {
@@ -64,13 +64,22 @@
 
 <style scoped>
     /*Svg styling start*/
+
+    .slideimg{
+        object-fit: cover;
+        height: 140px;
+        widows: 100%;
+    }
+    .cardtitle{
+        width: 140%;
+    }
     .line-a{fill:none;stroke:#fff;stroke-linecap:round;}
 
     .a,.b,.d{fill:none;}.a,.b{stroke:#3d3d3d;}.a{stroke-width:1.2px;}.b{stroke-linecap:round;}.c{stroke:none;}
     /*Svg styling end*/
 
     .base-card{
-        @apply rounded-lg relative pb-8;
+        @apply rounded-2xl relative pb-8;
     }
 
     .card-text-container{
@@ -82,6 +91,7 @@
     }
 
     .image-container{
+        @apply rounded-2xl flex justify-items-center items-center overflow-hidden;
         @apply rounded-lg flex justify-items-center items-center overflow-hidden;
         overflow: hidden;
     }
