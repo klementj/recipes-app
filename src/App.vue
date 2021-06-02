@@ -3,7 +3,7 @@
 
 <template>
 
-  <div class="dark:bg-gray-700 pt-10 h-screen">
+  <div class="dark:bg-gray-800 pt-10 h-full">
       
     <header class="flex justify-between px-10">
       <h2 class="font-semibold text-3xl dark:text-gray-100">Recipes</h2>

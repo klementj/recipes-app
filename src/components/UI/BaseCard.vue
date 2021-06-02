@@ -56,7 +56,7 @@
                 return this.mode === "focus" ? "highlignted" : "truncate"; 
             },
             cardClass(){
-                return this.mode === "focus" ? "bg-gray-100" : null; 
+                return this.mode === "focus" ? "bg-gray-100 dark:bg-gray-600" : null; 
             }
         }
     }
@@ -78,6 +78,7 @@
         max-width: 70%;
         word-wrap: break-word
     }
+
 
     .highlignted{
         @apply m-5;
