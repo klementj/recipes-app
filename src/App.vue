@@ -18,15 +18,18 @@
     </main>
   </div>
   <RecipeNavigation></RecipeNavigation>
+  <RecipeSteps></RecipeSteps>
 </template>
 
 <script>
 import RecipeNavigation from './components/RecipeNavigation.vue';
+import RecipeSteps from './components/RecipeSteps.vue';
 
 export default {
    name: 'App',
    components: {
-     RecipeNavigation
+     RecipeNavigation,
+     RecipeSteps
    }
 }
 </script>

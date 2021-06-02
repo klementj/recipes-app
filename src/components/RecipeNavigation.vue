@@ -1,9 +1,9 @@
 <template>
-  <div class="border-black border flex flex-col w-3/12 p-8">
-    <img src="" class="rounded" />
-    <h1 class="font-bold text-xl">Ingredients</h1>
+  <div class="border-gray-300 border flex flex-col w-4/12 py-20 p-8">
+    <img :src="'http://localhost:3080' + recipes[0].steps[0].image" class="rounded"/>
+    <h1 class="font-bold text-3xl my-5">Ingredients</h1>
     <ul>
-      <li v-for="ingredient in recipes[0].ingredients" v-bind:key="ingredient.type" class="py-4" style="list-style-type: none;">{{ ingredient.amount }} {{ ingredient.type }}</li>
+      <li v-for="ingredient in recipes[0].ingredients" v-bind:key="ingredient.type" class="py-4 px-5 text-lg" style="list-style-type: none;">{{ ingredient.amount }} {{ ingredient.type }}</li>
     </ul>
     <button class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
   </div>
@@ -22,7 +22,7 @@ export default {
             date: '2020-04-23T18:25:43.511Z',
             isFavorite: 'false',
             category: ['pork', 'pasta'],
-            featuredImage: './images/featured-pasta-carbonara.jpg',
+            featuredImage: '/images/featured-pasta-carbonara.jpg',
             ingredients: [
                 {
                 amount: '4',
@@ -56,12 +56,12 @@ export default {
             steps: [
                 {
                 step: '0',
-                image: './images/pasta-recipe-step0.jpg',
+                image: '/images/pasta-recipe-step0.jpg',
                 title: 'Ingredients'
                 },
                 {
                 step: '1',
-                image: './images/pasta-recipe-step1.jpg',
+                image: '/images/pasta-recipe-step1.jpg',
                 title: 'Boil the pasta water',
                 description: "Fill a large pot with clean cold water, put it on the stove, heat and let it come to a gentle boil."
                 },
