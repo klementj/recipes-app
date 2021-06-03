@@ -100,7 +100,7 @@ app.get('/recipes', async (req, res) => {
       isFavorite: 'false',
       category: ['vegan'],
       featuredImage: '/images/featured-fladbroed.jpg',
-      ingredients: [
+        ingredients: [
         {
           amount: '4',
           type: 'egg yolks'
