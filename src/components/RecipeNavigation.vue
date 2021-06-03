@@ -67,31 +67,31 @@ export default {
                 },
                 {
                 step: '2',
-                image: './images/pasta-recipe-step2.jpg',
+                image: '/images/pasta-recipe-step2.jpg',
                 title: 'Chop pork',
                 description: "While the water is on, take the <strong>guanciale</strong> and chop it into small chunks, about .5cm * 1cm. </br> Don't worry about the size, it is just to give a scale, this is a homemade dish and perfection is not necessary."
                 },
                 {
                 step: '3',
-                image: './images/pasta-recipe-step3.jpg',
+                image: '/images/pasta-recipe-step3.jpg',
                 title: 'Mix the sauce',
                 description: "Take a large bowl and whish the <strong>egg yolks</strong> together so they amalgamate into each other. </br> Add the <strong>pecorino</strong>, a pinch of <strong>salt</strong> and a pinch of <strong>black pepper</strong>. </br> Mix everything well together."
                 },
                 {
                 step: '4',
-                image: './images/pasta-recipe-step4.jpg',
+                image: '/images/pasta-recipe-step4.jpg',
                 title: 'Boil the pasta',
                 description: "Set the timer to about 7 minutes so you can taste them at that point and see how they are getting on. </br>Overall cooking time depends on the brand and consistency you like the most. "
                 },
                 {
                 step: '5',
-                image: './images/pasta-recipe-step5.jpg',
+                image: '/images/pasta-recipe-step5.jpg',
                 title: 'Cook the pork',
                 description: "Heat up a pan on the stove. Do not add oil or butter </br>Cook the <strong>guanciale</strong> in its own fat. </br>Stir often and let it cook for about <strong>7minutes</strong> </br> Let it cool for a few minutes. Then add it to the eff mixture and stir well."
                 },
                 {
                 step: '6',
-                image: './images/pasta-recipe-step6.jpg',
+                image: '/images/pasta-recipe-step6.jpg',
                 title: 'Coat the pasta with the egg mix',
                 description: "Heat up a pan on the stove. Do not add oil or butter. </br>Cook the guanciale in its own fat. </br>Stir often and let it cook for about 7minutes </br>Let it cool for a few minutes. Then add it to the eff mixture and stir well."
                 },
