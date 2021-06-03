@@ -37,13 +37,12 @@
       </section>
     </main>
   </div>
-  <!-- <RecipeNavigation></RecipeNavigation> -->
 </template>
 
 <script>
   import Slideshow from './components/slideshow.vue';
   import BaseCard from './components/UI/BaseCard.vue';
-  // import RecipeNavigation from './components/RecipeNavigation.vue';
+  
   export default {
     
     mounted(){
@@ -85,11 +84,6 @@
       }
     }
   }
-
-  
-  
-
-
 
 </script>
 
