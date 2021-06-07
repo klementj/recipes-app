@@ -21,10 +21,10 @@
               :image="recipe.featuredImage"/>
           </Slideshow>
       </section>
-      <section class="px-10 mt-10">
+      <section class="px-10 mt-10 lg:w-4/6 lg:m-auto">
           <h3 class="font-semibold text-gray-700 dark:text-gray-100">Favorites</h3>
-          <div class="mt-6" id="favorites">
-            <BaseCard v-for="recipe in favRecipes" 
+          <div class="mt-6 md:flex md:flex-wrap md:justify-around " id="favorites">
+            <BaseCard class="md:w-2/5" v-for="recipe in favRecipes" 
               :key="recipe.id" 
               :title="recipe.name"
               :time="recipe.time"

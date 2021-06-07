@@ -97,7 +97,7 @@ app.get('/recipes', async (req, res) => {
       name: 'Fladbrød med Aubergine',
       time: '30min',
       date: '2021-04-23T18:25:43.511Z',
-      isFavorite: 'false',
+      isFavorite: 'true',
       category: ['vegan'],
       featuredImage: '/images/featured-fladbroed.jpg',
         ingredients: [
