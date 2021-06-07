@@ -3,4 +3,10 @@ import App from './App.vue'
 import './assets/tailwind.css'
 import './index.css'
 
-createApp(App).mount('#app')
+import router from './router.js';
+
+const app = createApp(App)
+
+app.use(router);
+
+app.mount('#app')
