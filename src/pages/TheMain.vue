@@ -10,7 +10,7 @@
           </Slideshow>
       </section>
       <section class="px-10 mt-10">
-          <h3 class="font-semibold text-gray-700">Favorites</h3>
+          <h3 class="font-semibold text-gray-700 dark:text-gray-100">Favorites</h3>
           <div class="mt-6" id="favorites">
             <BaseCard v-for="recipe in favRecipes" 
               :key="recipe.id" 

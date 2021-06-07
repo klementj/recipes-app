@@ -13,12 +13,9 @@
       <router-view></router-view>
     </main>
   </div>
-  <!-- <RecipeNavigation></RecipeNavigation> -->
 </template>
 
 <script>
-
-
 </script>
 
 <style href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
