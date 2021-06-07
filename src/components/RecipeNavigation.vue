@@ -1,9 +1,9 @@
 <template>
-  <div class="border-black border flex flex-col w-3/12 p-8">
-    <img src="" class="rounded" />
-    <h1 class="font-bold text-xl">Ingredients</h1>
+  <div class="border-gray-300 border flex flex-col w-4/12 py-20 p-8">
+    <img :src="'http://localhost:3080' + recipes[0].steps[0].image" class="rounded"/>
+    <h1 class="font-bold text-3xl my-5">Ingredients</h1>
     <ul>
-      <li v-for="ingredient in recipes[0].ingredients" v-bind:key="ingredient.type" class="py-4" style="list-style-type: none;">{{ ingredient.amount }} {{ ingredient.type }}</li>
+      <li v-for="ingredient in recipes[0].ingredients" v-bind:key="ingredient.type" class="py-4 px-5 text-lg" style="list-style-type: none;">{{ ingredient.amount }} {{ ingredient.type }}</li>
     </ul>
     <button class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
   </div>
@@ -22,7 +22,7 @@ export default {
             date: '2020-04-23T18:25:43.511Z',
             isFavorite: 'false',
             category: ['pork', 'pasta'],
-            featuredImage: './images/featured-pasta-carbonara.jpg',
+            featuredImage: '/images/featured-pasta-carbonara.jpg',
             ingredients: [
                 {
                 amount: '4',
@@ -56,42 +56,42 @@ export default {
             steps: [
                 {
                 step: '0',
-                image: './images/pasta-recipe-step0.jpg',
+                image: '/images/pasta-recipe-step0.jpg',
                 title: 'Ingredients'
                 },
                 {
                 step: '1',
-                image: './images/pasta-recipe-step1.jpg',
+                image: '/images/pasta-recipe-step1.jpg',
                 title: 'Boil the pasta water',
                 description: "Fill a large pot with clean cold water, put it on the stove, heat and let it come to a gentle boil."
                 },
                 {
                 step: '2',
-                image: './images/pasta-recipe-step2.jpg',
+                image: '/images/pasta-recipe-step2.jpg',
                 title: 'Chop pork',
                 description: "While the water is on, take the <strong>guanciale</strong> and chop it into small chunks, about .5cm * 1cm. </br> Don't worry about the size, it is just to give a scale, this is a homemade dish and perfection is not necessary."
                 },
                 {
                 step: '3',
-                image: './images/pasta-recipe-step3.jpg',
+                image: '/images/pasta-recipe-step3.jpg',
                 title: 'Mix the sauce',
                 description: "Take a large bowl and whish the <strong>egg yolks</strong> together so they amalgamate into each other. </br> Add the <strong>pecorino</strong>, a pinch of <strong>salt</strong> and a pinch of <strong>black pepper</strong>. </br> Mix everything well together."
                 },
                 {
                 step: '4',
-                image: './images/pasta-recipe-step4.jpg',
+                image: '/images/pasta-recipe-step4.jpg',
                 title: 'Boil the pasta',
                 description: "Set the timer to about 7 minutes so you can taste them at that point and see how they are getting on. </br>Overall cooking time depends on the brand and consistency you like the most. "
                 },
                 {
                 step: '5',
-                image: './images/pasta-recipe-step5.jpg',
+                image: '/images/pasta-recipe-step5.jpg',
                 title: 'Cook the pork',
                 description: "Heat up a pan on the stove. Do not add oil or butter </br>Cook the <strong>guanciale</strong> in its own fat. </br>Stir often and let it cook for about <strong>7minutes</strong> </br> Let it cool for a few minutes. Then add it to the eff mixture and stir well."
                 },
                 {
                 step: '6',
-                image: './images/pasta-recipe-step6.jpg',
+                image: '/images/pasta-recipe-step6.jpg',
                 title: 'Coat the pasta with the egg mix',
                 description: "Heat up a pan on the stove. Do not add oil or butter. </br>Cook the guanciale in its own fat. </br>Stir often and let it cook for about 7minutes </br>Let it cool for a few minutes. Then add it to the eff mixture and stir well."
                 },

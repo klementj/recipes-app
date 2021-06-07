@@ -15,8 +15,13 @@
     </div>
     <div  class="card-text-container">
         <h3  :class="textClass" class="text-2xl cardtitle font-bold py-2 dark:text-gray-300" >{{title}}</h3>
+<<<<<<< HEAD
         <div class="flex mx-6">
             <svg class="mr-1 h-5 w-5 text-xl " xmlns="http://www.w3.org/2000/svg" width="13" height="14.531" viewBox="0 0 13 14.531">
+=======
+        <div class="flex">
+            <svg class="mr-1 h-5 w-5 text-xl ml-5" xmlns="http://www.w3.org/2000/svg" width="13" height="14.531" viewBox="0 0 13 14.531">
+>>>>>>> 49bf43996c8aafea3232a7d0b0d89424792d9a7d
                 <g transform="translate(-576 -3580.469)"><g transform="translate(-886.693 2747.694)"><g class="a" transform="translate(1462.693 834.306)"><circle class="c" cx="6.5" cy="6.5" r="6.5"/><circle class="d" cx="6.5" cy="6.5" r="5.9"/></g><line class="b" y2="0.45" transform="translate(1469.273 833.806)"/><line class="b" x1="4" transform="translate(1467.193 833.275)"/><line class="b" x1="2" transform="translate(1470.693 840.806)"/><g class="a" transform="translate(1467.693 839.306)"><circle class="c" cx="1.5" cy="1.5" r="1.5"/><circle class="d" cx="1.5" cy="1.5" r="0.9"/></g></g></g>
             </svg> 
             <p class="dark:text-gray-300">{{time}}</p>
@@ -57,7 +62,7 @@
                 return this.mode === "focus" ? "highlignted" : "truncate"; 
             },
             cardClass(){
-                return this.mode === "focus" ? "bg-gray-100" : null; 
+                return this.mode === "focus" ? "bg-gray-100 dark:bg-gray-600" : null; 
             }
         }
     }
@@ -68,7 +73,7 @@
 
     .line-a{fill:none;stroke:#fff;stroke-linecap:round;}
 
-    .a,.b,.d{fill:none;}.a,.b{stroke:#595959;}.a{stroke-width:1.2px;}.b{stroke-linecap:round;}.c{stroke:none;}
+    .a,.b,.d{fill:none;}.a,.b{stroke:#595959; @apply stroke-current dark:text-white}.a{stroke-width:1.2px;}.b{stroke-linecap:round;}.c{stroke:none;}
     /*Svg styling end*/
 
     .base-card{
@@ -77,12 +82,12 @@
 
     .highlignted{
         max-width: 70%;
-        word-wrap: break-word
+        word-wrap: break-word;
+        @apply m-5;
+
     }
 
-    .highlignted{
-        @apply m-5;
-    }
+
 
     .image-container{
         @apply rounded-2xl flex justify-items-center items-center overflow-hidden;
