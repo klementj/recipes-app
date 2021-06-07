@@ -18,6 +18,7 @@
     "swiper": "^6.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue": "^3.0.0",
+    "vue-router": "^4.0.8",
     "vue-tailwind": "^2.2.1",
     "vueperslides": "^3.3.0"
   },
