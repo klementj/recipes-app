@@ -6,7 +6,8 @@
               :key="recipe.id" class="card" 
               :title="recipe.name" 
               :time="recipe.time" 
-              :image="recipe.featuredImage"/>
+              :image="recipe.featuredImage"
+              height="h-40 lg:h-60 xl:h-80"/>
           </Slideshow>
       </section>
       <section class="px-10 mt-10">

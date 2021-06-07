@@ -77,15 +77,15 @@
     }
 
     .slide-card{
-        @apply lg:flex lg:flex-row-reverse;
+        @apply lg:bg-gray-100 lg:flex lg:flex-row-reverse lg:justify-between;
     }
 
     .slide-card .card-text-container{
-        @apply flex-grow overflow-hidden;
+        @apply overflow-hidden p-2 lg:w-2/5;
     }
 
     .slide-card .image-container{
-        @apply flex-grow;
+        @apply lg:w-3/5;
     }
 
     .fav-card .card-text-container{
