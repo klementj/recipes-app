@@ -5,6 +5,7 @@
         <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
         </svg>
     </div>
+    <!-- <router-link to="/recipe/id"></router-link> -->
     <div class="image-container">
         <img :class="height" class="w-full" :src="'http://localhost:3080/' + image">
     </div>
@@ -14,7 +15,7 @@
     </div>
     <div  class="card-text-container">
         <h3  :class="textClass" class="text-2xl cardtitle font-bold py-2 dark:text-gray-300" >{{title}}</h3>
-        <div class="flex">
+        <div class="flex mx-6">
             <svg class="mr-1 h-5 w-5 text-xl " xmlns="http://www.w3.org/2000/svg" width="13" height="14.531" viewBox="0 0 13 14.531">
                 <g transform="translate(-576 -3580.469)"><g transform="translate(-886.693 2747.694)"><g class="a" transform="translate(1462.693 834.306)"><circle class="c" cx="6.5" cy="6.5" r="6.5"/><circle class="d" cx="6.5" cy="6.5" r="5.9"/></g><line class="b" y2="0.45" transform="translate(1469.273 833.806)"/><line class="b" x1="4" transform="translate(1467.193 833.275)"/><line class="b" x1="2" transform="translate(1470.693 840.806)"/><g class="a" transform="translate(1467.693 839.306)"><circle class="c" cx="1.5" cy="1.5" r="1.5"/><circle class="d" cx="1.5" cy="1.5" r="0.9"/></g></g></g>
             </svg> 
