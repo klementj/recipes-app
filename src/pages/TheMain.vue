@@ -19,7 +19,7 @@
               :image="recipe.featuredImage"
               :isFavorite="recipe.isFavorite === 'true'"
               :isVegan="recipe.isVegan === 'true'"
-              mode="focus"
+              mode="favorite"
               height="h-60" />
           </div>
       </section>
