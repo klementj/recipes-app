@@ -7,7 +7,19 @@
 
 <script>
     export default{
-        props: ['id', 'dotIndex', 'pageIndex'],
+        props: {
+            id: {
+                type: String
+            },
+            dotIndex: {
+                type: Number,
+                required: true
+            },
+            pageIndex: {
+                type: Number,
+                required: true
+            }
+        },
         computed: {
             routerLink(){
                 return '/recipe/' + this.id + '/' + this.pageIndex;
