@@ -8,7 +8,9 @@
           <h3 class="font-semibold text-gray-700 dark:text-gray-300">New recipes</h3>
           <Slideshow >
             <BaseCard v-for="recipe in newRecipes" 
-              :key="recipe.id" class="card" 
+               class="card"
+              :key="recipe.id"
+              :id="recipe.id"
               :title="recipe.name" 
               :time="recipe.time" 
               :image="recipe.featuredImage"
@@ -20,7 +22,7 @@
           <div class="mt-6 md:flex md:flex-wrap md:justify-around " id="favorites">
             <BaseCard class="md:w-2/5" v-for="recipe in favRecipes" 
               :key="recipe.id" 
-              :id="recipe.id"
+              :id="recipe.id" 
               :title="recipe.name"
               :time="recipe.time"
               :image="recipe.featuredImage"

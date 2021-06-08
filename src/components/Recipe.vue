@@ -1,15 +1,15 @@
 <template>
-<div class="mx-5">
-    <img :src="'http://localhost:3080/'+currentRecipe.featuredImage" class="rounded"/>
-    <ul class="p-5">
-      <li class="flex">
-        <h2>{{ currentRecipe.name }}</h2>
-      </li>
+    <div class="mx-5">
+        <img :src="'http://localhost:3080/'+currentRecipe.featuredImage" class="rounded"/>
+        <ul class="p-5">
+        <li class="flex">
+            <h2>{{ currentRecipe.name }}</h2>
+        </li>
 
-      <li class="font-semibold mx-16 my-8">
-      </li>
-    </ul>
-</div>
+        <li class="font-semibold mx-16 my-8">
+        </li>
+        </ul>
+    </div>
 
 </template>
 
