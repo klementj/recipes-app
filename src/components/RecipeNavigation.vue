@@ -1,17 +1,21 @@
 <template>
-  <div class="border-gray-300 border flex flex-col w-4/12 py-20 p-8">
-    <img :src="'http://localhost:3080' + recipes[0].steps[0].image" class="rounded"/>
-    <h1 class="font-bold text-3xl my-5">Ingredients</h1>
-    <ul>
-      <li v-for="ingredient in recipes[0].ingredients" v-bind:key="ingredient.type" class="py-4 px-5 text-lg" style="list-style-type: none;">{{ ingredient.amount }} {{ ingredient.type }}</li>
-    </ul>
+    <div class="py-16 border-gray-300 border flex flex-col">
     <button class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
-  </div>
+    <span class="flex space-x-2 mx-auto">
+      <svg :key="step.step" v-for="step in steps" xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><defs></defs><g class="a"><circle class="b" cx="2.5" cy="2.5" r="2.5"/><circle class="c" cx="2.5" cy="2.5" r="2"/></g></svg>
+    </span>
+</div>
+    
 </template>
 
 <script>
+import RecipeSteps from './RecipeSteps.vue';
+
 export default {
   name: 'RecipeNavigation',
+  components: {
+    RecipeSteps
+  },
   data() {
     return {
         recipes: [
