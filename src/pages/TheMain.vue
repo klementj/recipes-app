@@ -21,7 +21,7 @@
               :isFavorite="recipe.isFavorite === 'true'"
               :isVegan="recipe.isVegan === 'true'"
               mode="favorite"
-              height="h-60" />
+              height="h-60 lg:h-72 xl:h-80" />
           </div>
       </section>
 </template>
