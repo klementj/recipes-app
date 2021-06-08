@@ -1,26 +1,34 @@
 <template>
+<header class="flex justify-between px-10">
+      <h2 class="font-semibold text-3xl dark:text-gray-100">Recipes</h2>
+      <img src="../assets/Path181.svg">
+      
+    </header>
     <section class="px-10 pr-0 mt-10">
           <h3 class="font-semibold text-gray-700 dark:text-gray-300">New recipes</h3>
           <Slideshow >
             <BaseCard v-for="recipe in newRecipes" 
-              :key="recipe.id" class="card" 
+               class="card"
+              :key="recipe.id"
+              :id="recipe.id"
               :title="recipe.name" 
               :time="recipe.time" 
               :image="recipe.featuredImage"
               height="h-40 lg:h-60 xl:h-80"/>
           </Slideshow>
       </section>
-      <section class="px-10 mt-10">
+      <section class="px-10 mt-10 lg:w-4/6 lg:m-auto">
           <h3 class="font-semibold text-gray-700 dark:text-gray-100">Favorites</h3>
-          <div class="mt-6" id="favorites">
-            <BaseCard v-for="recipe in favRecipes" 
+          <div class="mt-6 md:flex md:flex-wrap md:justify-around " id="favorites">
+            <BaseCard class="md:w-2/5" v-for="recipe in favRecipes" 
               :key="recipe.id" 
+              :id="recipe.id" 
               :title="recipe.name"
               :time="recipe.time"
               :image="recipe.featuredImage"
               :isFavorite="recipe.isFavorite === 'true'"
               :isVegan="recipe.isVegan === 'true'"
-              mode="favorite"
+              mode="focus"
               height="h-60" />
           </div>
       </section>

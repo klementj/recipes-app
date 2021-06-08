@@ -2,6 +2,7 @@ import {createRouter, createWebHistory } from 'vue-router';
 
 import TheMain from './pages/TheMain.vue';
 import NotFound from './pages/NotFound.vue';
+import Recipe from './components/Recipe.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -13,6 +14,7 @@ const router = createRouter({
             alias: '/',
             component: TheMain
         },
+        { name: 'recipe', path: '/recipe/:recipeId', component: Recipe, props:true},
         { path: '/:notFound(.*)', component: NotFound }
     ],
     linkActiveClass: 'active',
