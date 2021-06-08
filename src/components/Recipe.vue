@@ -1,11 +1,25 @@
 <template>
+ <div class="border-gray-300 border flex flex-col py-20 p-8">
+
+ <img :src="step.image" class="rounded"/>
+
+    <ul class="p-5">
+      <li class="flex">
+        <h1 v-if='step.step == 0' class="font-bold text-5xl text-black mx-5">{{ step.step }}</h1>
+        <h2 class="font-semibold text-2xl text-black">{{ step.title }}</h2>
+      </li>
+
+      <li class="font-semibold mx-16 my-8">{{ step.description }}</li>
+    </ul>
+</div>
     <div class="py-16 border-gray-300 border flex flex-col">
     <button class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
     <span class="flex space-x-2 mx-auto">
       <svg :key="step.step" v-for="step in steps" xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><defs></defs><g class="a"><circle class="b" cx="2.5" cy="2.5" r="2.5"/><circle class="c" cx="2.5" cy="2.5" r="2"/></g></svg>
     </span>
 </div>
-    
+   
+
 </template>
 
 <script>
