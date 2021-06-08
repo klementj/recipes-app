@@ -27,12 +27,12 @@
     },
     methods: {
         loadRecipe(recipeId){
-            fetch('http://localhost:3080/recipes')
+            fetch('http://localhost:3080/recipes/' +recipeId)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                this.currentRecipe = data[recipeId - 1];
+                this.currentRecipe = data;
                 console.log(this.currentRecipe);
 
         });
