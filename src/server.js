@@ -130,7 +130,7 @@ const data = [
     date: '2021-02-23T18:25:43.511Z',
     isFavorite: 'true',
     category: ['desert'],
-    featuredImage: '/images/featured-featured-dutch-baby.jpg',
+    featuredImage: '/images/featured-dutch-baby.jpg',
     ingredients: [
       {
         amount: '4',
