@@ -1,37 +1,41 @@
 <template>
  <div class="border-gray-300 border flex flex-col py-20 p-8">
 
- <img :src="step.image" class="rounded"/>
+ <img :src="'http://localhost:3080' + Recipe.steps[currentStep].imagerecipes[currentStep].steps[currentStep].image" class="rounded"/>
 
-    <ul class="p-5">
+    <ul class="p-5 mt-5">
       <li class="flex">
-        <h1 v-if='step.step == 0' class="font-bold text-5xl text-black mx-5">{{ step.step }}</h1>
-        <h2 class="font-semibold text-2xl text-black">{{ step.title }}</h2>
+        <h1 v-if='currentStep != 0' class="font-bold text-5xl text-black mx-5">{{ currentStep }}</h1>
+        <h2 class="font-semibold text-2xl mx-5 text-black">{{ Recipe.steps[currentStep].title }}</h2>
       </li>
-
-      <li class="font-semibold mx-16 my-8">{{ step.description }}</li>
+      <li class="mx-10 m-3" :key="ingredient.name" v-for="ingredient in Recipe.ingredients">{{ ingredient.amount }} {{ ingredient.type }}</li>
+      <li class="font-semibold mx-16 my-8">{{ Recipe.steps[currentStep].description }}</li>
     </ul>
-</div>
-    <div class="py-16 border-gray-300 border flex flex-col">
+    <div class="flex flex-col">
     <button class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
     <span class="flex space-x-2 mx-auto">
-      <svg :key="step.step" v-for="step in steps" xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><defs></defs><g class="a"><circle class="b" cx="2.5" cy="2.5" r="2.5"/><circle class="c" cx="2.5" cy="2.5" r="2"/></g></svg>
+      <svg :key="step.step" v-for="step in Recipe.steps" xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><defs></defs><g class="a"><circle class="b" cx="2.5" cy="2.5" r="2.5"/><circle class="c" cx="2.5" cy="2.5" r="2"/></g></svg>
     </span>
 </div>
+</div>
+    
    
 
 </template>
 
+
+<style>.a{fill:#fff;stroke:#707070;}.b{stroke:none;}.c{fill:none;}</style>
+
 <script>
-import RecipeSteps from './RecipeSteps.vue';
 
 export default {
   name: 'RecipeNavigation',
-  components: {
-    RecipeSteps
-  },
+props: {
+  Recipe: Array
+},
   data() {
     return {
+        currentStep: 0,
         recipes: [
             {
             id: '1',
@@ -207,13 +211,13 @@ export default {
     }
   }
 }
-//     var recipes;
-// fetch('http://localhost:3080/recipes')
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     recipes = data;
-//     console.log(recipes);
-//   });
+    var recipes;
+fetch('http://localhost:3080/recipes')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    recipes = data;
+    console.log(recipes);
+  });
 </script>

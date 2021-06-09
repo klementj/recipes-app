@@ -1,12 +1,8 @@
 <template>
 <div :class="cardClass" class="base-card">
-    
-    <div class="image-container">
-        
+    <router-link :to="'/recipe/' + id">
         <div class="image-container">
-            <router-link :to="'/recipe/'+id">
             <img :class="height" class="w-full" :src="'http://localhost:3080/' + image">
-            </router-link>
             <div class="favorite-banner" v-if="isFavorite">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
@@ -17,6 +13,7 @@
                 <h5>Vegan</h5>
             </div>
         </div>
+    </router-link>
     <div  class="card-text-container">
         <h3 class="text-2xl cardtitle font-bold py-2 dark:text-gray-300" >{{title}}</h3>
         <div class="flex">
