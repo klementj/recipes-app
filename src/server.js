@@ -24,6 +24,7 @@ const data = [
     name: 'Pasta Carbonara',
     time: '30min',
     date: '2020-04-23T18:25:43.511Z',
+    isVegan: 'true',
     isFavorite: 'false',
     category: ['pork', 'pasta'],
     featuredImage: '/images/featured-pasta-carbonara.jpg',
@@ -106,6 +107,7 @@ const data = [
     name: 'Fladbrød med Aubergine',
     time: '30min',
     date: '2021-04-23T18:25:43.511Z',
+    isVegan: 'false',
     isFavorite: 'true',
     category: ['vegan'],
     featuredImage: '/images/featured-fladbroed.jpg',
@@ -128,9 +130,10 @@ const data = [
     name: 'Dutch baby au natural',
     time: '60min',
     date: '2021-02-23T18:25:43.511Z',
+    isVegan: 'false',
     isFavorite: 'true',
     category: ['desert'],
-    featuredImage: '/images/featured-featured-dutch-baby.jpg',
+    featuredImage: '/images/featured-dutch-baby.jpg',
     ingredients: [
       {
         amount: '4',
@@ -151,6 +154,7 @@ const data = [
     time: '30min',
     date: '2012-04-23T18:25:43.511Z',
     isFavorite: 'true',
+    isVegan: 'true',
     category: ['vegan'],
     featuredImage: '/images/featured-baguette-figs.jpg',
     ingredients: [
@@ -173,6 +177,7 @@ const data = [
     time: '40min',
     date: '2018-02-20T18:25:43.511Z',
     isFavorite: 'true',
+    isVegan: 'true',
     category: ['vegetarian', 'pasta'],
     featuredImage: '/images/featured-pasta-pesto.jpg',
     ingredients: [
