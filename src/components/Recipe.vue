@@ -10,14 +10,14 @@
       <li class="mx-16 my-8">{{ currentRecipe.steps[currentStep].description }}</li>
     </ul>
 
-    <ul v-if="currentStep == 0">
+    <ul v-if="currentRecipe.steps[0].step == '0'">
       <li class="mx-10 m-3" :key="ingredient.name" v-for="ingredient in currentRecipe.ingredients">{{ ingredient.amount }} {{ ingredient.type }}</li>
     </ul>
 
     <div class="flex mx-auto">
-    <button v-if="currentStep == 0" v-on:click="currentStep++" class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
-    <span v-if="currentStep != 0" class="flex mx-auto">
-      <NavDots :key="step.step" v-for="step in currentRecipe.steps" :pageIndex="currentStep" :dotIndex="step.step"></NavDots>
+    <button v-if="currentRecipe.steps[0].step == '0'" v-on:click="this.hide" class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
+    <span v-if="currentRecipe.steps[0].step != '0'" class="flex mx-auto">
+      <NavDots :key="step.step" v-for="step in adjustedRecipe" :pageIndex="currentStep" :id="recipeId" :dotIndex="step.step"></NavDots>
     </span>
     </div>
 </div>
@@ -41,6 +41,14 @@ components: {
     return {
         currentStep: 0,
         currentRecipe: [],
+    }
+  },
+
+  computed: {
+    adjustedRecipe() {
+      let adjusted = [...this.currentRecipe.steps];
+      adjust.shift();
+      return this.currentRecipe;
     }
   },
 
