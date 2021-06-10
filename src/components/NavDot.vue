@@ -12,11 +12,11 @@
                 type: String
             },
             dotIndex: {
-                type: Number,
+                type: String,
                 required: true
             },
             pageIndex: {
-                type: Number,
+                type: String,
                 required: true
             }
         },

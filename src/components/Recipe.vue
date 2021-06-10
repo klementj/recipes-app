@@ -10,45 +10,42 @@
       <li class="mx-16 my-8">{{ currentRecipe.steps[currentStep].description }}</li>
     </ul>
 
-    <ul v-if="currentRecipe.steps[0].step == '0'">
+    <ul v-if="currentRecipe.steps[currentStep].step == '0'">
       <li class="mx-10 m-3" :key="ingredient.name" v-for="ingredient in currentRecipe.ingredients">{{ ingredient.amount }} {{ ingredient.type }}</li>
     </ul>
 
     <div class="flex mx-auto">
-    <button v-if="currentRecipe.steps[0].step == '0'" v-on:click="this.hide" class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold">START COOKING</button>
-    <span v-if="currentRecipe.steps[0].step != '0'" class="flex mx-auto">
-      <NavDots :key="step.step" v-for="step in adjustedRecipe" :pageIndex="currentStep" :id="recipeId" :dotIndex="step.step"></NavDots>
+    <button v-if="currentRecipe.steps[currentStep].step == '0'" v-on:click="currentStep++" class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold uppercase">Start Cooking</button>
+    <span v-if="currentRecipe.steps[currentStep].step != '0'" class="flex mx-auto">
+      <NavDots :key="step.step" v-for="step in recipeSteps" :pageIndex="step.step" :id="recipeId" :dotIndex="currentStep"></NavDots>
     </span>
     </div>
 </div>
 </template>
 
-
-<style>.a{fill:#fff;stroke:#707070;}.b{stroke:none;}.c{fill:none;}</style>
-
 <script>
 import NavDots from './NavDot.vue';
 
 export default {
-  name: 'RecipeNavigation',
-props: {
-  recipeId: String
-},
-components: {
-  NavDots
-},
+  name: 'Recipe',
+  props: {
+    recipeId: String
+  },
+  components: {
+    NavDots
+  },
   data() {
     return {
         currentStep: 0,
-        currentRecipe: [],
+        currentRecipe: {},
     }
   },
 
   computed: {
-    adjustedRecipe() {
+    recipeSteps() {
       let adjusted = [...this.currentRecipe.steps];
-      adjust.shift();
-      return this.currentRecipe;
+      adjusted.shift();
+      return adjusted;
     }
   },
 
@@ -65,8 +62,6 @@ components: {
        })
        .then((data) => {
          this.currentRecipe = data;
-         
-         console.log(this.currentRecipe);
        });
     }
   },
