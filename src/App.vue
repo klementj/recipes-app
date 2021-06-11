@@ -7,17 +7,17 @@
       <router-view></router-view>
     </main>
   </div>
-  <Recipe></Recipe>
+  <!--<Recipe></Recipe>-->
 </template>
 
 <script>
-import Recipe from './components/Recipe.vue';
+// import Recipe from './components/Recipe.vue';
 
-export default {
-  components: {
-    Recipe
-  }
-}
+// export default {
+//   components: {
+//     Recipe
+//   }
+// }
 </script>
 
 <style href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
