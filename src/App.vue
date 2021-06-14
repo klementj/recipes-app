@@ -41,11 +41,37 @@
   }
 
 .route-enter-active{
-  animation: slide-in 1.5s ease-out;
+  width: 100vw;
+  position: absolute;
+  animation: slide-in-alt 1s;
 }
 
 .route-leave-active{
-  animation: slide-out 1s ease-out;
+  width: 100vw;
+  position: absolute;
+  animation: slide-out-alt 1s;
+}
+
+@keyframes slide-in-alt{
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-alt{
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
 }
 
 @keyframes slide-in {
