@@ -1,5 +1,6 @@
 <template>
-<header class="flex justify-between px-10">
+<div>
+  <header class="flex justify-between px-10">
       <h2 class="font-semibold text-3xl dark:text-gray-100">Recipes</h2>
       <img src="../assets/Path181.svg">
       
@@ -32,6 +33,7 @@
               height="h-60 lg:h-72 xl:h-80" />
           </div>
       </section>
+</div>
 </template>
 
 <script>

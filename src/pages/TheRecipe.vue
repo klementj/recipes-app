@@ -1,7 +1,6 @@
 <template>
  <div v-if="currentRecipe !== null" class="flex flex-col p-8">
- <img :src="'http://localhost:3080' + currentRecipe.steps[currentStep].image" class="rounded"/>
-
+  <img :src="'http://localhost:3080' + currentRecipe.steps[currentStep].image" class="rounded"/>
     <ul class="mt-5">
       <li class="flex">
         <h1 v-if="currentStep != 0" class="font-bold text-5xl text-black mx-5">{{ currentStep }}</h1>

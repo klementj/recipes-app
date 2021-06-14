@@ -4,7 +4,11 @@
 <template>
   <div class="dark:bg-gray-800 pt-10 h-full">
     <main>
-      <router-view></router-view>
+      <router-view v-slot="slotProps">
+        <transition name="route">
+          <component :is="slotProps.Component"></component>
+        </transition>
+      </router-view>
     </main>
   </div>
   <!--<Recipe></Recipe>-->
@@ -38,4 +42,82 @@
     width: 300px;
     scroll-snap-align: start;
   }
+
+.route-enter-from{
+  opacity: 0;
+  background: purple;
+}
+
+.route-enter-active{
+  </*
+  position: absolute;
+  animation: slide-in 1.5s ease-out;*/
+  transition: all 5.5s;
+}
+
+.route-enter-to{
+  opacity: 1;
+}
+
+.route-leave-from{
+  opacity: 0;
+  background: purple;
+}
+
+.route-leave-active{
+  /*
+  position: absolute;
+  animation: slide-out 1.5s ease-in;*/
+  transition: all 5.5s;
+}
+
+.route-leave-to{
+  opacity: 0;
+  background: purple;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100vw) scale(0.5);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translateX(90vw) scale(0.7);
+    opacity: 0.5;
+  }
+
+  70% {
+    transform: translateX(0) scale(0.8);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateX(0vw) scale(0.8);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: translateX(-90vw) scale(0.7);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(-100vw) scale(0.5);
+    opacity: 0;
+
+  }
+
 </style>
