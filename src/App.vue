@@ -26,9 +26,6 @@
 
 <style href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
-</style>
-
-<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,53 +40,28 @@
     scroll-snap-align: start;
   }
 
-.route-enter-from{
-  opacity: 0;
-  background: purple;
-}
-
 .route-enter-active{
-  </*
-  position: absolute;
-  animation: slide-in 1.5s ease-out;*/
-  transition: all 5.5s;
-}
-
-.route-enter-to{
-  opacity: 1;
-}
-
-.route-leave-from{
-  opacity: 0;
-  background: purple;
+  animation: slide-in 1.5s ease-out;
 }
 
 .route-leave-active{
-  /*
-  position: absolute;
-  animation: slide-out 1.5s ease-in;*/
-  transition: all 5.5s;
-}
-
-.route-leave-to{
-  opacity: 0;
-  background: purple;
+  animation: slide-out 1s ease-out;
 }
 
 @keyframes slide-in {
   0% {
-    transform: translateX(100vw) scale(0.5);
+    transform: translateX(100vw) scale(0.9);
     opacity: 0;
   }
 
   30% {
-    transform: translateX(90vw) scale(0.7);
+    transform: translateX(90vw)  scale(0.9);
     opacity: 0.5;
   }
 
   70% {
-    transform: translateX(0) scale(0.8);
-    opacity: 0.8;
+    transform: translateX(0) scale(0.9);
+    opacity: 0.6;
   }
 
   100% {
@@ -97,6 +69,7 @@
     opacity: 1;
   }
 }
+
 
 @keyframes slide-out {
   0% {
@@ -119,5 +92,5 @@
     opacity: 0;
 
   }
-
+}
 </style>
