@@ -14,14 +14,14 @@
     </ul>
 
     <div class="flex mx-auto">
-    <button 
+    <router-link 
       v-if="currentRecipe.steps[currentStep].step == '0' && currentRecipe.steps.length > 1" 
-      v-on:click="currentStep++" 
+      :to="'/recipe/' + this.recipeId + '/' + 1"
       class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold uppercase">
         Start Cooking
-    </button>
+    </router-link>
     <p v-else-if="currentRecipe.steps[currentStep].step == '0'">This recipe has no steps. Sorry.</p>
-    <span v-if="currentRecipe.steps[currentStep].step != '0'" class="flex mx-auto">
+    <span v-if="currentRecipe.steps[currentStep].step != '0'" class="flex mx-auto items-center">
       <NavDots :key="step.step" v-for="step in recipeSteps" :pageIndex="step.step" :id="recipeId" :dotIndex="currentStep"></NavDots>
     </span>
     </div>
@@ -37,14 +37,17 @@ export default {
   name: 'Recipe',
   props: {
     recipeId: String,
-    step: String
+    step: {
+      type: String,
+      default: '0'
+    }
   },
   components: {
     NavDots
   },
   data() {
     return {
-        currentStep: 2,
+        currentStep: 0,
         currentRecipe: null,
     }
   },
@@ -57,6 +60,9 @@ export default {
   },
   created(){
     this.loadRecipe(this.recipeId);
+  },
+  mounted(){
+    this.currentStep = this.step;
   },
   methods: {
     loadRecipe(recipeId){
@@ -75,8 +81,8 @@ export default {
     recipeId(newId){
       this.loadRecipe(newId);
     },
-    $route (){
-      //this.currentStep = this.step;
+    $route (to){
+      this.currentStep = to.params.step;
     }
   }
 }
