@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-        currentStep: 0,
+        currentStep: 1,
         currentRecipe: null,
     }
   },
@@ -74,6 +74,11 @@ export default {
   watch: {
     recipeId(newId){
       this.loadRecipe(newId);
+    },
+    $route (){
+      console.log(this.$router.params);
+        this.currentStep = this.$router.params.step;
+        console.log(this.currentStep);
     }
   }
 }

@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import Slideshow from '../components/slideshow.vue';
-import BaseCard from '../components/UI/BaseCard.vue';
+import Slideshow from "../components/slideshow.vue";
+import BaseCard from "../components/UI/BaseCard.vue";
 
-export default{
-    mounted(){
-      fetch('http://localhost:3080/recipes')
+export default {
+  mounted() {
+    fetch("http://localhost:3080/recipes")
       .then((response) => {
         return response.json();
       })
@@ -52,32 +52,42 @@ export default{
         this.sortRecipesByDate();
         this.sortRecipesByFavorite();
       });
+  },
+  components: {
+    Slideshow,
+    BaseCard,
+    // RecipeNavigation
+  },
+  data() {
+    return {
+      recipes: {},
+      newRecipes: {},
+      favRecipes: {},
+    };
+  },
+  methods: {
+    sortRecipesByDate: function() {
+      this.newRecipes = this.recipes;
+      this.newRecipes.filter(function(a, b) {
+        return new Date(a.date) - new Date(b.date);
+      });
+      this.newRecipes.reverse();
+      //  this.newRecipes = this.newRecipes.slice(0, 5);
     },
-    components: {
-      Slideshow,
-      BaseCard,
-     // RecipeNavigation
+    sortRecipesByFavorite() {
+      this.favRecipes = this.recipes.filter((r) => r.isFavorite === "true");
+      // this.favRecipes.reverse();
     },
-    data(){
-      return {
-        recipes: {},
-        newRecipes: {},
-        favRecipes: {}
-      };
-    },
-    methods: {
-      sortRecipesByDate: function () {
-        this.newRecipes = this.recipes;
-        this.newRecipes.filter(function(a,b){
-          return new Date(a.date) - new Date(b.date)
-        });
-        this.newRecipes.reverse();
-        //  this.newRecipes = this.newRecipes.slice(0, 5);
-      },
-      sortRecipesByFavorite() {
-        this.favRecipes = this.recipes.filter(r => r.isFavorite === 'true');
-        // this.favRecipes.reverse();
-      }
-    }
-}
+  },
+};
 </script>
+
+<style>
+.a {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+</style>
