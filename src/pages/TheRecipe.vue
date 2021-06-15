@@ -36,23 +36,23 @@ import NavDots from '../components/NavDot.vue';
 export default {
   name: 'Recipe',
   props: {
-    recipeId: String
+    recipeId: String,
+    step: String
   },
   components: {
     NavDots
   },
   data() {
     return {
-        currentStep: 1,
+        currentStep: 2,
         currentRecipe: null,
     }
   },
 
   computed: {
     recipeSteps() {
-      let adjusted = [...this.currentRecipe.steps];
-      adjusted.shift();
-      return adjusted;
+      return this.currentRecipe.steps;
+      
     }
   },
   created(){
@@ -76,9 +76,7 @@ export default {
       this.loadRecipe(newId);
     },
     $route (){
-      console.log(this.$router.params);
-        this.currentStep = this.$router.params.step;
-        console.log(this.currentStep);
+      //this.currentStep = this.step;
     }
   }
 }

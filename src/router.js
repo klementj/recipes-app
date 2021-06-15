@@ -15,7 +15,7 @@ const router = createRouter({
             component: TheMain
         },
         { name: 'recipe', path: '/recipe/:recipeId', component: TheRecipe, props:true},
-        { name: 'step', path: '/recipe/:recipeId/:step', component: TheRecipe, props: true},
+        { name: 'step', path: '/recipe/:recipeId/:step', component: TheRecipe, props:true},
         
         { path: '/:notFound(.*)', component: NotFound }
     ],
