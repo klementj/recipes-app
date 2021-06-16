@@ -1,37 +1,54 @@
 <template>
- <div v-if="currentRecipe !== null" class="flex flex-col p-8">
-  <img :src="'http://localhost:3080' + currentRecipe.steps[currentStep].image" class="rounded"/>
-    <ul class="mt-5">
-      <li class="flex">
-        <h1 v-if="currentStep != 0" class="font-bold text-5xl text-black mx-5">{{ currentStep }}</h1>
-        <h2 class="font-semibold text-2xl mx-5 text-black">{{ currentRecipe.steps[currentStep].title }}</h2>
+ <div v-if="currentRecipe !== null">
+  <div id="recipe" class="flex overflow-hidden">
+    <div class="flex flex-col px-8 min-w-full box-border pb-8">
+      <img :src="'http://localhost:3080' + currentRecipe.featuredImage" class="rounded"/>
+      <ul class="mt-5">
+        <li class="flex">
+          <h2 class="font-semibold text-2xl mx-5 mb-4 text-black">Ingredients</h2>
+        </li>
+        <li 
+        class="mx-10 m-3" 
+        v-for="ingredient in currentRecipe.ingredients" 
+        :key="ingredient.name">{{ ingredient.amount }} {{ ingredient.type }}
       </li>
-      <li class="mx-16 my-8">{{ currentRecipe.steps[currentStep].description }}</li>
-    </ul>
+      </ul>
+    </div>
+    <recipe-step 
+      v-for="recipeStep in recipeSteps" 
+      :currentRecipeStep="recipeStep" 
+      :key="recipeStep.step">
+    </recipe-step>
+  </div>
 
-    <ul v-if="currentRecipe.steps[currentStep].step == '0'">
-      <li class="mx-10 m-3" v-for="ingredient in currentRecipe.ingredients" :key="ingredient.name">{{ ingredient.amount }} {{ ingredient.type }}</li>
-    </ul>
-
-    <div class="flex mx-auto">
+    <div class="flex mx-auto mt-auto">
     <router-link 
-      v-if="currentRecipe.steps[currentStep].step == '0' && currentRecipe.steps.length > 1" 
+      v-if="currentStep == '0' && currentRecipe.steps.length > 1" 
       :to="'/recipe/' + this.recipeId + '/' + 1"
       class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold uppercase">
         Start Cooking
     </router-link>
-    <p v-else-if="currentRecipe.steps[currentStep].step == '0'">This recipe has no steps. Sorry.</p>
-    <span v-if="currentRecipe.steps[currentStep].step != '0'" class="flex mx-auto items-center">
-      <NavDots :key="step.step" v-for="step in recipeSteps" :pageIndex="step.step" :id="recipeId" :dotIndex="currentStep"></NavDots>
-    </span>
+    <router-link 
+      v-else-if="currentStep < 1"
+      class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold uppercase" 
+      to="/">Front Page
+    </router-link>
+    <div v-if="currentStep > 0" class="flex mx-auto items-center">
+      <NavDots 
+        v-for="step in recipeSteps" 
+        :key="step.step" 
+        :pageIndex="step.step" 
+        :id="recipeId" 
+        :dotIndex="currentStep">
+      </NavDots>
     </div>
-    <router-link v-if="currentRecipe.steps[currentStep].step == '0' && currentRecipe.steps.length == 1" class="self-center rounded-full px-12 py-5 my-5 bg-black text-white font-bold uppercase" to="/">Front Page</router-link>
-
+    </div>
 </div>
 </template>
 
 <script>
 import NavDots from '../components/NavDot.vue';
+import RecipeStep from '../components/RecipeStep';
 
 export default {
   name: 'Recipe',
@@ -43,26 +60,32 @@ export default {
     }
   },
   components: {
-    NavDots
+    NavDots,
+    RecipeStep
   },
   data() {
     return {
         currentStep: 0,
+        scroll2: 0,
         currentRecipe: null,
     }
   },
 
   computed: {
     recipeSteps() {
-      return this.currentRecipe.steps;
-      
+      let steps = this.currentRecipe.steps;
+      steps.splice(0, 1);
+      return steps;
     }
   },
   created(){
     this.loadRecipe(this.recipeId);
+    this.currentStep = this.step;
+    console.log(this.step);
   },
   mounted(){
-    this.currentStep = this.step;
+    // this.scroll(this.step);
+    
   },
   methods: {
     loadRecipe(recipeId){
@@ -73,17 +96,36 @@ export default {
        })
        .then((data) => {
          this.currentRecipe = data;
+         this.scroll(this.step);
        });
+    },
+    scroll(scrollValue){
+      var scrollLength = window.innerWidth * scrollValue;
+
+      this.scroll2 = scrollLength;
+
+      
+      document.querySelector("#recipe").scrollTo(this.scroll2, 0);
     }
   },
-
   watch: {
     recipeId(newId){
       this.loadRecipe(newId);
     },
     $route (to){
+      this.scroll(to.params.step);
       this.currentStep = to.params.step;
     }
   }
 }
 </script>
+
+<style>
+.recipe{
+  transition: scroll 1s ease-in;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+</style>
